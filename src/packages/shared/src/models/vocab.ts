@@ -4,7 +4,7 @@ import { VocabLevelType } from "../enums";
 /**
  * Vocab model
  */
-export class Vocab extends BaseEntity {
+export class IVocab extends BaseEntity {
   
   /**
    * Spelling of word
@@ -24,7 +24,7 @@ export class Vocab extends BaseEntity {
   /**
    * Korean Meaning of word
    */
-  public meaingKr!: string;
+  public meaningKr!: string;
   
   /**
    * Translation of example sentence of word
