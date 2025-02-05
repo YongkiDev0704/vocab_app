@@ -10,7 +10,6 @@ export type Resolver<Arguments, Returns, Parent = any> = {
 };
 
 export type GraphqlContext = {
-  user: User | null;
   adminUser: AdminUser | null;
   req: express.Request & {
     userAgent: string;

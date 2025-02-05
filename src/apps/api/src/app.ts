@@ -35,7 +35,6 @@ import { GraphqlContext } from "./graphql/types";
         const userAgent = req.headers["user-agent"] || "unknown";
 
         return {
-          user: null,
           adminUser: null,
           req: {
             ...req,
