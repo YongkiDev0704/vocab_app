@@ -17,20 +17,25 @@ export class IVocab extends BaseEntity {
   public level!: VocabLevelType;
   
   /**
+   * Meaning of word
+   */
+  public meaningEn!: string;
+
+  /**
    * Example Sentence of word
    */
   public exampleSentence!: string;
   
   /**
-   * Korean Meaning of word
-   */
-  public meaningKr!: string;
-  
-  /**
    * Translation of example sentence of word
    */
   public exampleSentenceKr!: string;
-  
+ 
+  /**
+   * Korean Meaning of word
+   */
+  public meaningKr!: string;
+ 
   /**
    * Image URL of word
    */
@@ -45,4 +50,4 @@ export class IVocab extends BaseEntity {
    * Pronunciation in korean of word
    */
   public pronunciationKr?: string;
-}
+};

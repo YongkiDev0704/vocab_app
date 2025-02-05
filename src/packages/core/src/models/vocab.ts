@@ -27,6 +27,9 @@ export class Vocab extends IVocab {
   declare public exampleSentence: string;
   
   @prop({ required: true })
+  declare public meaningEn: string;
+
+  @prop({ required: true })
   declare public meaningKr: string;
   
   @prop({ required: true })
