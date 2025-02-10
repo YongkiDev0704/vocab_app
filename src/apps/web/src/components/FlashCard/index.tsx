@@ -41,6 +41,7 @@ export const FlashCard = () => {
 
 const Wrapper = styled.div`
   perspective: 1000px;
+  margin-bottom: 40px;
 `;
 
 const Card = styled.div<{ isFlipped: Boolean}>`
@@ -52,7 +53,7 @@ const Card = styled.div<{ isFlipped: Boolean}>`
   transform-style: preserve-3d;
   transition: transform 0.6s;
   cursor: pointers;
-  
+
   transform: ${({ 
     isFlipped 
   }) => (

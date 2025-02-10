@@ -17,6 +17,7 @@ const Wrapper = styled.div`
   top: 0;
   left: 0;
   min-height: 152px;
+  z-index: 10;
   gap: 28px;
   box-sizing: border-box;
   width: 100%;        
@@ -24,5 +25,4 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   background: white;
-  border-bottom: 1px solid black;
 `;
