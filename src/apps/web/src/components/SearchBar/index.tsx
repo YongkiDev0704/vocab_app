@@ -43,5 +43,4 @@ const Input = styled.input`
   border-radius: 8px;
   outline: none;  
   border: none;       
-
 `;
