@@ -1,11 +1,11 @@
+import { VocabModel } from "@ykvocab/core";
 import { IVocab } from "@ykvocab/shared";
 
 import { Resolver } from "../../types";
-import { VocabModel } from "@ykvocab/core";
 
 export const getVocabByWord: Resolver<
   {
-    word: String;
+    word: string;
   }, {
     success: boolean;
     error?: string;

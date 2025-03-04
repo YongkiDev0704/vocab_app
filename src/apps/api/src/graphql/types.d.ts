@@ -9,6 +9,12 @@ export type Resolver<Arguments, Returns, Parent = any> = {
   ): Promise<Returns>;
 };
 
+export type AdminUser = {
+  id: string;
+  userName: string;
+  role: string
+}
+
 export type GraphqlContext = {
   adminUser: AdminUser | null;
   req: express.Request & {

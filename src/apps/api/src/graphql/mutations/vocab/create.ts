@@ -1,4 +1,4 @@
-import { VocabModel } from "@ykvocab/core";
+  import { VocabModel } from "@ykvocab/core";
 import { IVocab } from "@ykvocab/shared";
 
 import { Resolver } from "../../types";
@@ -22,8 +22,15 @@ export const createVocab: Resolver<
     error?: string;
     vocab?: IVocab;
   }
-> = async (_, { data }) => {
+> = async (_, { data }, context) => {
   try {
+    if (!context.adminUser) {
+      return {
+        success: false,
+        error: "Unauthorized",
+      };
+    };
+    
     const vocab = await VocabModel.create(data);
 
     return {

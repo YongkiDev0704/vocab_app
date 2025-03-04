@@ -12,6 +12,18 @@ export const typeDefs: IExecutableSchemaDefinition<GraphqlContext>["typeDefs"] =
     C1
   }
 
+  enum UserRole {
+    Admin
+    Normal
+  }
+
+  type User {
+    _id: ID!
+    userName: String!
+    password: String!
+    role: UserRole
+  }
+
   type Vocab {
     _id: ID!
     word: String!
@@ -37,7 +49,23 @@ export const typeDefs: IExecutableSchemaDefinition<GraphqlContext>["typeDefs"] =
     pronunciationKr: String
   }
 
+  input CreateUserInput {
+    userName: String!
+    password: String!
+    role: UserRole!
+  }
+
+  input LoginUserInput {
+    userName: String!
+    password: String!
+  }
+
   type CreateVocabResult {
+    success: Boolean!
+    error: String
+  }
+
+  type CreateUserResult {
     success: Boolean!
     error: String
   }
@@ -48,11 +76,39 @@ export const typeDefs: IExecutableSchemaDefinition<GraphqlContext>["typeDefs"] =
     data: Vocab
   }
 
+  type PaginateVocabResult {
+    docs: [Vocab]!
+    totalDocs: Int!
+    limit: Int!
+    totalPages: Int!
+    page: Int
+    pagingCounter: Int!
+    hasPrevPage: Boolean!
+    hasNextPage: Boolean!
+    prevPage: Int
+    nextPage: Int
+  }
+
+  type LoginUserResult {
+    success: Boolean!
+    error: String
+    token: String
+  }
+
+  type CheckAdminAuthResult {
+    success: Boolean!
+    error: String
+  }
+
   type Mutation {
     createVocab(data: CreateVocabInput!): CreateVocabResult!
+    createUser(data: CreateUserInput!): CreateUserResult!
+    loginUser(data: LoginUserInput!): LoginUserResult!
   }
 
   type Query {
     getVocabByWord(word: String!): GetVocabByWordResult!
+    getPaginatedVocab(page: Int!, limit: Int!): PaginateVocabResult!
+    checkAdminAuth: CheckAdminAuthResult!
   }
-`
+`;
